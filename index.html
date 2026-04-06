@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- daisy and tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="w-11/12 mx-auto pt-6">
+      <h1 class="font-bold text-2xl text-primary">Job Application Tracker</h1>
+      <section class="card flex flex-row gap-6 mt-3">
+        <div class="card bg-base-200 w-96 shadow-sm">
+          <div class="card-body">
+            <p class="text-xl">Total</p>
+            <p id="total-stat" class="text-primary font-bold text-xl">0</p>
+          </div>
+        </div>
+        <div class="card bg-base-200 w-96 shadow-sm">
+          <div class="card-body">
+            <p class="text-xl">Interview</p>
+            <p id="interview-stat" class="font-bold text-accent text-xl">0</p>
+          </div>
+        </div>
+        <div class="card bg-base-200 w-96 shadow-sm">
+          <div class="card-body">
+            <p class="text-xl">Rejected</p>
+            <p id="reject-stat" class="font-bold text-secondary text-xl">0</p>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <div class="w-11/12 flex justify-between mx-auto mb-6 mt-8">
+        <p class="text-primary font-semibold">Available Jobs</p>
+        <p><span id = "available_stat">8</span> jobs</p>
+      </div>
+      <div class="w-11/12 mx-auto flex gap-3">
+        <button id="all" onclick="switchtab('all')" class="btn">All</button>
+        <button id="Interview" onclick="switchtab('Interview')" class="btn">
+          Interview
+        </button>
+        <button id="Rejected" onclick="switchtab('Rejected')" class="btn">
+          Rejected
+        </button>
+      </div>
+      <div id="jobs-container">
+        <section id="all-container">
+          <div class="card bg-base-200 w-11/12 mx-auto shadow-sm mt-4">
+            <div class="card-body">
+              <div class="flex justify-between">
+                <p class="text-primary font-bold">Mobile first corporation</p>
+                <div
+                  class=" cursor-pointer ml-7 rounded-full w-8 h-8 bg-red-300 flex justify-center items-center delete"
+                >
+                  <i class="fa-solid fa-trash-can delete"></i>
+                </div>
+              </div>
+              <p class="text-primary font-normal">React developer</p>
+              <p class="text-primary font-normal text-xs">
+                Remote • Full-time • $130,000 - $175,000
+              </p>
+              <div class="badge badge-soft badge-primary tmp">Not applied</div>
+              <p class="text-xs">
+                Build cross-platform mobile applications using React Native.
+                Work on products used by millions of users worldwide.
+              </p>
+              <div class="mt-2 flex gap-3">
+                <button class="interview btn btn-outline btn-primary h-7 w-20">
+                  Interview
+                </button>
+                <button class="rejected btn btn-outline btn-secondary h-7 w-20">
+                  Rejected
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-200 w-11/12 mx-auto shadow-sm mt-4">
+            <div class="card-body">
+              <div class="flex justify-between">
+                <p class="text-primary font-bold">Mobile first corporation</p>
+                <div
+                  class=" cursor-pointer ml-7 rounded-full w-8 h-8 bg-red-300 flex justify-center items-center delete"
+                >
+                  <i class="fa-solid fa-trash-can delete"></i>
+                </div>
+              </div>
+              <p class="text-primary font-normal">React developer</p>
+              <p class="text-primary font-normal text-xs">
+                Remote • Full-time • $130,000 - $175,000
+              </p>
+              <div class="badge badge-soft badge-primary tmp">Not applied</div>
+              <p class="text-xs">
+                Build cross-platform mobile applications using React Native.
+                Work on products used by millions of users worldwide.
+              </p>
+              <div class="mt-2 flex gap-3">
+                <button class="interview btn btn-outline btn-primary h-7 w-20">
+                  Interview
+                </button>
+                <button class="rejected btn btn-outline btn-secondary h-7 w-20">
+                  Rejected
+                </button>
+              </div>
+            </div>
+          </div>
+         
+        
+         
+        </section>
+        <section id="interview-container">
+        
+        </section>
+        <section id="reject-container">
+          
+        </section>
+      </div>
+      <div id="empty_stat" class="hidden flex-col items-center justify-center py-20 gap-4 text-center">
+        <div class="text-7xl opacity-20 mb-4 text-blue-800"><i class="fa-regular fa-file-lines"></i></div>
+        <p class="font-syne tex-lg font-bold text-navy">No jobs available</p>
+        <p class="text-sm text-slate-400">
+          check back soon for new job opportunities
+        </p>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
